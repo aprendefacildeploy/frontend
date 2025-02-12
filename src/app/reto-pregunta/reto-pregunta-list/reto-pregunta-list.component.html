@@ -1,0 +1,68 @@
+<div class="container mat-elevation-z8">
+    <h2 class="mat-h2">Listado de Preguntas de Reto</h2>
+    <div class="d-flex justify-content-end mb-3">
+      <button mat-raised-button color="primary" routerLink="/reto-pregunta/new">Nueva Pregunta</button>
+      <button mat-raised-button color="" routerLink="/home">Inicio</button>
+    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Columna ID -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let retoPregunta">{{ retoPregunta.id }}</td>
+      </ng-container>
+  
+      <!-- Columna Reto -->
+      <ng-container matColumnDef="id_reto">
+        <th mat-header-cell *matHeaderCellDef>Reto</th>
+        <td mat-cell *matCellDef="let retoPregunta">{{ retoPregunta.id_reto }}</td>
+      </ng-container>
+  
+      <!-- Columna Título -->
+      <ng-container matColumnDef="titulo">
+        <th mat-header-cell *matHeaderCellDef>Título</th>
+        <td mat-cell *matCellDef="let retoPregunta">{{ retoPregunta.titulo || 'Sin título' }}</td>
+      </ng-container>
+  
+      <!-- Columna Pregunta -->
+      <ng-container matColumnDef="pregunta">
+        <th mat-header-cell *matHeaderCellDef>Pregunta</th>
+        <td mat-cell *matCellDef="let retoPregunta">{{ retoPregunta.pregunta || 'Sin pregunta' }}</td>
+      </ng-container>
+  
+      <!-- Columna URL Imagen -->
+      <ng-container matColumnDef="url_imagen">
+        <th mat-header-cell *matHeaderCellDef>URL Imagen</th>
+        <td mat-cell *matCellDef="let retoPregunta">{{ retoPregunta.url_imagen || 'Sin Imagen' }}</td>
+      </ng-container>
+  
+      <!-- Columna Dimensión -->
+      <ng-container matColumnDef="id_dimension">
+        <th mat-header-cell *matHeaderCellDef>Dimensión</th>
+        <td mat-cell *matCellDef="let retoPregunta">{{ retoPregunta.dimension || 'Sin dimensión' }}</td>
+      </ng-container>
+  
+      <!-- Columna Acciones -->
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <td mat-cell *matCellDef="let retoPregunta">
+          <button mat-icon-button color="primary" routerLink="/reto-pregunta/edit/{{ retoPregunta.id }}">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteRetoPregunta(retoPregunta.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <div class="paginator-container">
+      <mat-paginator
+        [length]="totalItems"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons>
+      </mat-paginator>
+    </div>
+  </div>

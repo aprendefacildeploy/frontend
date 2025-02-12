@@ -1,0 +1,37 @@
+<div class="form-container mat-elevation-z8">
+  <div class="form-card">
+    <h2 class="mat-h2 text-center">{{ isEdit ? 'Editar' : 'Nueva' }} Asignación Menú-Persona</h2>
+    <form (ngSubmit)="saveMenuPersona()" class="row g-3">
+      <!-- Menú -->
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Menú</mat-label>
+          <mat-select [(ngModel)]="menuPersona.id_menu" name="id_menu" required>
+            <mat-option *ngFor="let menu of menus" [value]="menu.id">{{ menu.descripcion || menu.id }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Persona -->
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Persona</mat-label>
+          <mat-select [(ngModel)]="menuPersona.id_persona" name="id_persona" required>
+            <mat-option *ngFor="let persona of personas" [value]="persona.id">{{ persona.nombre_1 }} {{ persona.apellido_1 }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Estado -->
+      <div class="col-md-6 d-flex align-items-center">
+        <mat-checkbox [(ngModel)]="menuPersona.estado" name="estado">Activo</mat-checkbox>
+      </div>
+
+      <!-- Botones -->
+      <div class="col-12 d-flex justify-content-between">
+        <button mat-raised-button color="primary" type="submit">{{ isEdit ? 'Actualizar' : 'Guardar' }}</button>
+        <button mat-raised-button color="secondary" type="button" routerLink="/menu-persona">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

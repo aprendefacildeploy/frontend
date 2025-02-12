@@ -1,0 +1,14 @@
+/* contenido-list.component.css */
+.container {
+    padding: 20px;
+    /* Padding interno del contenedor */
+}
+
+.mat-elevation-z8 {
+    padding: 20px;
+    /* Padding dentro de la tabla */
+    background-color: white;
+    /* Fondo blanco para mejor contraste */
+    border-radius: 8px;
+    /* Bordes redondeados */
+}

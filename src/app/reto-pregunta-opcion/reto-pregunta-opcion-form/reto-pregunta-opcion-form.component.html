@@ -1,0 +1,45 @@
+<div class="form-container mat-elevation-z8">
+  <div class="form-card">
+    <h2 class="mat-h2 text-center">{{ isEdit ? 'Editar' : 'Nueva' }} Opción de Pregunta</h2>
+    <form (ngSubmit)="saveOpcion()" class="row g-3">
+      <!-- Reto-Pregunta -->
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Reto-Pregunta</mat-label>
+          <mat-select [(ngModel)]="opcion.id_reto_pregunta" name="id_reto_pregunta" required>
+            <mat-option *ngFor="let retoPregunta of retosPregunta" [value]="retoPregunta.id">
+              {{ retoPregunta.pregunta }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Descripción -->
+      <div class="col-md-12">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Descripción</mat-label>
+          <textarea matInput [(ngModel)]="opcion.descripcion" name="descripcion" rows="4" required></textarea>
+        </mat-form-field>
+      </div>
+
+      <!-- URL Imagen -->
+      <div class="col-md-12">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>URL Imagen</mat-label>
+          <input matInput type="text" [(ngModel)]="opcion.url_imagen" name="url_imagen" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Correcta -->
+      <div class="col-md-6 d-flex align-items-center">
+        <mat-checkbox [(ngModel)]="opcion.correcta" name="correcta">Es Correcta</mat-checkbox>
+      </div>
+
+      <!-- Botones -->
+      <div class="col-12 d-flex justify-content-between">
+        <button mat-raised-button color="primary" type="submit">{{ isEdit ? 'Actualizar' : 'Guardar' }}</button>
+        <button mat-raised-button color="secondary" type="button" routerLink="/reto-pregunta-opcion">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+/* Contenedor principal */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Altura completa de la pantalla */
+    background-color: #f5f5f5; /* Fondo claro */
+  }
+  
+  /* Tarjeta del formulario */
+  .form-card {
+    width: 100%;
+    max-width: 700px; /* Ancho máximo para pantallas grandes */
+    padding: 32px;
+    border-radius: 12px;
+    background-color: white; /* Fondo blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  /* Título */
+  .mat-h2 {
+    margin-bottom: 24px;
+    font-weight: bold;
+    color: #333; /* Texto oscuro */
+    text-align: center; /* Centrar el título */
+  }
+  
+  /* Campos de entrada */
+  mat-form-field {
+    width: 100%;
+  }
+  
+  /* Área de texto */
+  textarea {
+    resize: none; /* Evita que el usuario cambie el tamaño manualmente */
+  }
+  
+  /* Botones */
+  button {
+    min-width: 120px; /* Ancho mínimo para los botones */
+  }
+  
+  /* Espaciado entre botones */
+  .col-12.d-flex.justify-content-between {
+    gap: 16px; /* Espacio entre los botones */
+  }
+  
+  /* Ajustes para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .form-card {
+      padding: 24px; /* Reducir el padding en pantallas pequeñas */
+    }
+  
+    button {
+      width: 100%; /* Hacer los botones ocupar todo el ancho */
+      margin-bottom: 16px; /* Espaciado entre botones */
+    }
+  }

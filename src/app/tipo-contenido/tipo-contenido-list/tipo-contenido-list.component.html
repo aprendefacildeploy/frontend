@@ -1,0 +1,33 @@
+<div class="container mat-elevation-z8">
+    <h2 class="mat-h2">Listado de Tipos de Contenido</h2>
+    <div class="d-flex justify-content-end mb-3">
+      <button mat-raised-button color="primary" routerLink="/tipo-contenido/new">Nuevo Tipo de Contenido</button>
+      <button mat-raised-button color="" routerLink="/home">Inicio</button>
+    </div>
+    <table mat-table [dataSource]="tiposContenido" class="mat-elevation-z8">
+      <!-- Columna ID -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let tipo">{{ tipo.id }}</td>
+      </ng-container>
+  
+      <!-- Columna Nombre -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let tipo">{{ tipo.nombre }}</td>
+      </ng-container>
+  
+      <!-- Columna Acciones -->
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <td mat-cell *matCellDef="let tipo">          
+          <button mat-icon-button color="warn" (click)="deleteTipoContenido(tipo.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>

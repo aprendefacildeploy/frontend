@@ -1,0 +1,56 @@
+<div class="form-container mat-elevation-z8">
+  <div class="form-card">
+    <h2 class="mat-h2 text-center">{{ isEdit ? 'Editar' : 'Nueva' }} Pregunta de Reto</h2>
+    <form (ngSubmit)="saveRetoPregunta()" class="row g-3">
+      <!-- Reto -->
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Reto</mat-label>
+          <mat-select [(ngModel)]="retoPregunta.id_reto" name="id_reto" required>
+            <mat-option *ngFor="let reto of retos" [value]="reto.id">{{ reto.id }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Título -->
+      <div class="col-md-12">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Título</mat-label>
+          <input matInput type="text" [(ngModel)]="retoPregunta.titulo" name="titulo" />
+        </mat-form-field>
+      </div>
+
+      <!-- Pregunta -->
+      <div class="col-md-12">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Pregunta</mat-label>
+          <textarea matInput [(ngModel)]="retoPregunta.pregunta" name="pregunta" rows="4"></textarea>
+        </mat-form-field>
+      </div>
+
+      <!-- URL Imagen -->
+      <div class="col-md-12">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>URL Imagen</mat-label>
+          <input matInput type="text" [(ngModel)]="retoPregunta.url_imagen" name="url_imagen" />
+        </mat-form-field>
+      </div>
+
+      <!-- Dimensión -->
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Dimensión</mat-label>
+          <mat-select [(ngModel)]="retoPregunta.id_dimension" name="id_dimension">
+            <mat-option *ngFor="let dimension of dimensiones" [value]="dimension.id">{{ dimension.nombre }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Botones -->
+      <div class="col-12 d-flex justify-content-between">
+        <button mat-raised-button color="primary" type="submit">{{ isEdit ? 'Actualizar' : 'Guardar' }}</button>
+        <button mat-raised-button color="secondary" type="button" routerLink="/reto-pregunta">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,232 @@
+<div class="container mat-elevation-z8">
+  <div class="header">
+    <h2 class="mat-h2 text-center">Aprende Fácil Administrador</h2>
+    <button mat-raised-button color="warn" class="logout-button" (click)="cerrarSesion()">Cerrar Sesión</button>    
+  </div>
+  <div class="card-grid">
+    <!-- Tarjeta Contenido -->
+    <div class="card-item">
+      <mat-card class="card" routerLink="/contenido">
+        <mat-card-header>
+          <mat-card-title>Contenido</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Gestiona los contenidos del sistema.</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Ir a Contenido</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <!-- Tarjeta Tipo Contenido -->
+    <div class="card-item">
+      <mat-card class="card" routerLink="/tipo-contenido">
+        <mat-card-header>
+          <mat-card-title>Tipo de Contenido</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Gestiona los tipos de contenido del sistema.</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Ir a Tipos de Contenido</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <!-- Tarjeta Tema -->
+    <div class="card-item">
+      <mat-card class="card" routerLink="/tema">
+        <mat-card-header>
+          <mat-card-title>Tema</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Gestiona los temas del sistema.</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Ir a Temas</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <!-- Tarjeta Unidad -->
+    <div class="card-item">
+      <mat-card class="card" routerLink="/unidad">
+        <mat-card-header>
+          <mat-card-title>Unidad</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Gestiona las unidades del sistema.</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Ir a Unidades</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <!-- Tarjeta Persona -->
+    <div class="card-item">
+      <mat-card class="card" routerLink="/persona">
+        <mat-card-header>
+          <mat-card-title>Persona</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Gestiona las personas registradas en el sistema.</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Ir a Personas</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <!-- Tarjeta Reto -->
+    <div class="card-item">
+      <mat-card class="card" routerLink="/reto">
+        <mat-card-header>
+          <mat-card-title>Reto</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Gestiona los retos disponibles en el sistema.</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Ir a Retos</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <!-- Tarjeta Tipo Reto -->
+    <div class="card-item">
+      <mat-card class="card" routerLink="/tipo-reto">
+        <mat-card-header>
+          <mat-card-title>Tipo de Reto</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Gestiona los tipos de reto del sistema.</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Ir a Tipos de Reto</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <!-- Tarjeta Persona-Unidad -->
+    <div class="card-item">
+      <mat-card class="card" routerLink="/persona-unidad">
+        <mat-card-header>
+          <mat-card-title>Asignaciones Persona-Unidad</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Gestiona las asignaciones entre personas y unidades.</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Ir a Asignaciones</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <!-- Tarjeta Dimension -->
+    <div class="card-item">
+      <mat-card class="card" routerLink="/dimension">
+        <mat-card-header>
+          <mat-card-title>Dimensión</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Gestiona las dimensiones asociadas a los retos.</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Ir a Dimensiones</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <!-- Tarjeta Reto-Pregunta -->
+    <div class="card-item">
+      <mat-card class="card" routerLink="/reto-pregunta">
+        <mat-card-header>
+          <mat-card-title>Preguntas de Reto</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Gestiona las preguntas asociadas a los retos.</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Ir a Preguntas</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <!-- Tarjeta Reto-Pregunta-Opcion -->
+    <div class="card-item">
+      <mat-card class="card" routerLink="/reto-pregunta-opcion">
+        <mat-card-header>
+          <mat-card-title>Opciones de Pregunta</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Gestiona las opciones de respuesta para las preguntas de reto.</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Ir a Opciones</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <!-- Tarjeta Georeferencia -->
+    <div class="card-item">
+      <mat-card class="card" routerLink="/georeferencia">
+        <mat-card-header>
+          <mat-card-title>Georeferencia</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Gestiona las georeferencias asociadas a los retos.</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Ir a Georeferencias</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <!-- Tarjeta Menu -->
+    <div class="card-item">
+      <mat-card class="card" routerLink="/menu">
+        <mat-card-header>
+          <mat-card-title>Menú</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Gestiona los menús del sistema.</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Ir a Menús</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <!-- Tarjeta Menu-Persona -->
+    <div class="card-item">
+      <mat-card class="card" routerLink="/menu-persona">
+        <mat-card-header>
+          <mat-card-title>Asignaciones Menú-Persona</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Gestiona las asignaciones entre menús y personas.</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Ir a Asignaciones</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <div class="card-item">
+      <mat-card class="card" routerLink="/reporte">
+        <mat-card-header>
+          <mat-card-title>Reportes</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Genera los reportes</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Ir a Reportes</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </div>
+</div>

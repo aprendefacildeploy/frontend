@@ -1,0 +1,38 @@
+<div class="form-container mat-elevation-z8">
+  <div class="form-card">
+    <h2 class="mat-h2 text-center">{{ isEdit ? 'Editar' : 'Nueva' }} Georeferencia</h2>
+    <form (ngSubmit)="saveGeoreferencia()" class="row g-3">
+      <!-- Reto-Pregunta -->
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Pregunta</mat-label>
+          <mat-select [(ngModel)]="georeferencia.id_reto_pregunta" name="id_reto_pregunta" required>
+            <mat-option *ngFor="let retoPregunta of retosPregunta" [value]="retoPregunta.id">{{ retoPregunta.pregunta }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Latitud -->
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Latitud</mat-label>
+          <input matInput type="number" [(ngModel)]="georeferencia.latitud" name="latitud" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Longitud -->
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Longitud</mat-label>
+          <input matInput type="number" [(ngModel)]="georeferencia.longitud" name="longitud" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Botones -->
+      <div class="col-12 d-flex justify-content-between">
+        <button mat-raised-button color="primary" type="submit">{{ isEdit ? 'Actualizar' : 'Guardar' }}</button>
+        <button mat-raised-button color="secondary" type="button" routerLink="/georeferencia">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

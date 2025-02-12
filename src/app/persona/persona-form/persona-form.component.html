@@ -1,0 +1,97 @@
+<div class="form-container mat-elevation-z8">
+  <div class="form-card">
+    <h2 class="mat-h2 text-center">{{ isEdit ? 'Editar' : 'Nueva' }} Persona</h2>
+    <form (ngSubmit)="savePersona()" class="row g-3">
+      <!-- Tipo de Identificación -->
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Tipo de Identificación</mat-label>
+          <mat-select [(ngModel)]="persona.tipo_id" name="tipo_id" required>
+            <mat-option value="CC">Cédula de Ciudadanía</mat-option>
+            <mat-option value="TI">Tarjeta de Identidad</mat-option>
+            <mat-option value="CE">Cédula de Extranjería</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Nombres -->
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Primer Nombre</mat-label>
+          <input matInput type="text" [(ngModel)]="persona.nombre_1" name="nombre_1" required />
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Segundo Nombre</mat-label>
+          <input matInput type="text" [(ngModel)]="persona.nombre_2" name="nombre_2" />
+        </mat-form-field>
+      </div>
+
+      <!-- Apellidos -->
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Primer Apellido</mat-label>
+          <input matInput type="text" [(ngModel)]="persona.apellido_1" name="apellido_1" required />
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Segundo Apellido</mat-label>
+          <input matInput type="text" [(ngModel)]="persona.apellido_2" name="apellido_2" />
+        </mat-form-field>
+      </div>
+
+      <!-- Identificación -->
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Identificación</mat-label>
+          <input matInput type="text" [(ngModel)]="persona.identificacion" name="identificacion" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Email -->
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" [(ngModel)]="persona.email" name="email" />
+        </mat-form-field>
+      </div>
+
+      <!-- Usuario -->
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Nombre de Usuario</mat-label>
+          <input matInput type="text" [(ngModel)]="persona.name_user" name="name_user" />
+        </mat-form-field>
+      </div>
+
+      <!-- Contraseña -->
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" [(ngModel)]="persona.contrasena" name="contrasena" required />
+        </mat-form-field>
+      </div>
+
+      <!-- Vigente -->
+      <div class="col-md-6">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Vigente</mat-label>
+          <mat-select [(ngModel)]="persona.vigente" name="vigente" required>
+            <mat-option value="S">Sí</mat-option>
+            <mat-option value="N">No</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Botones -->
+      <div class="col-12 d-flex justify-content-between">
+        <button mat-raised-button color="primary" type="submit">{{ isEdit ? 'Actualizar' : 'Guardar' }}</button>
+        <button mat-raised-button color="secondary" type="button" routerLink="/persona">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>

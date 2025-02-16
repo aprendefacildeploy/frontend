@@ -7,7 +7,7 @@
         <mat-form-field appearance="outline" class="w-100">
           <mat-label>Reto</mat-label>
           <mat-select [(ngModel)]="retoPregunta.id_reto" name="id_reto" required>
-            <mat-option *ngFor="let reto of retos" [value]="reto.id">{{ reto.id }}</mat-option>
+            <mat-option *ngFor="let reto of retos" [value]="reto.id">{{ reto.unidad }} - {{ reto.tipo_reto }}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
